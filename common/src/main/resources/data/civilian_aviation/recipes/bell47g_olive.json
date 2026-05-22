@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PEI",
+    "NSP",
+    "HII"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "immersive_aircraft:propeller"
+      }
+    ],
+    "E": [
+      {
+        "item": "minecraft:green_wool"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "N": [
+      {
+        "item": "immersive_aircraft:engine"
+      }
+    ],
+    "S": [
+      {
+        "item": "immersive_aircraft:sturdy_pipes"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:bell47g_olive"
+  }
+}

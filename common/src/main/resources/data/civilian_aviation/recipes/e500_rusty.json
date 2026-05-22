@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GHN",
+    "YBI",
+    "GHN"
+  ],
+  "key": {
+    "G": [
+      {
+        "item": "minecraft:gray_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "N": [
+      {
+        "item": "immersive_aircraft:nether_engine"
+      }
+    ],
+    "Y": [
+      {
+        "item": "immersive_aircraft:gyroscope"
+      }
+    ],
+    "B": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_block"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:e500_rusty"
+  }
+}

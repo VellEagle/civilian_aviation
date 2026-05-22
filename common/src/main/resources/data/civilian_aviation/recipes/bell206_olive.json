@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GEG",
+    "CBC",
+    "IHI"
+  ],
+  "key": {
+    "G": [
+      {
+        "item": "minecraft:green_wool"
+      }
+    ],
+    "E": [
+      {
+        "item": "immersive_aircraft:enhanced_propeller"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "B": [
+      {
+        "tag": "civilian_aviation:bell47g"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:bell206_olive"
+  }
+}

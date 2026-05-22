@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RHR",
+    "COC",
+    "IHI"
+  ],
+  "key": {
+    "R": [
+      {
+        "item": "minecraft:red_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "O": [
+      {
+        "tag": "civilian_aviation:comanche"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:vulcanair_red"
+  }
+}

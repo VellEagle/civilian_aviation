@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YSL",
+    "HBP",
+    "ISI"
+  ],
+  "key": {
+    "Y": [
+      {
+        "item": "minecraft:yellow_wool"
+      }
+    ],
+    "S": [
+      {
+        "item": "immersive_aircraft:sail"
+      }
+    ],
+    "L": [
+      {
+        "item": "minecraft:light_gray_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "B": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ],
+    "P": [
+      {
+        "item": "immersive_aircraft:propeller"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:pzlp11_tan"
+  }
+}

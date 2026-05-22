@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BIR",
+    "IPI",
+    " I "
+  ],
+  "key": {
+    "B": [
+      {
+        "item": "minecraft:black_wool"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "R": [
+      {
+        "item": "minecraft:red_wool"
+      }
+    ],
+    "P": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:skyhawk_blackred"
+  }
+}

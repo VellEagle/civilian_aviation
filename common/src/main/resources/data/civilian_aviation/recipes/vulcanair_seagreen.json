@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WHG",
+    "COC",
+    "IHI"
+  ],
+  "key": {
+    "W": [
+      {
+        "item": "minecraft:white_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "G": [
+      {
+        "item": "minecraft:green_wool"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "O": [
+      {
+        "tag": "civilian_aviation:comanche"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:vulcanair_seagreen"
+  }
+}

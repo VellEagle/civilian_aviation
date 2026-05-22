@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GHG",
+    "COC",
+    "IHI"
+  ],
+  "key": {
+    "G": [
+      {
+        "item": "minecraft:gray_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "O": [
+      {
+        "tag": "civilian_aviation:comanche"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:vulcanair_gray"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OEB",
+    "CLC",
+    "IHI"
+  ],
+  "key": {
+    "O": [
+      {
+        "item": "minecraft:orange_wool"
+      }
+    ],
+    "E": [
+      {
+        "item": "immersive_aircraft:enhanced_propeller"
+      }
+    ],
+    "B": [
+      {
+        "item": "minecraft:blue_wool"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "L": [
+      {
+        "tag": "civilian_aviation:bell47g"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:bell206_police"
+  }
+}

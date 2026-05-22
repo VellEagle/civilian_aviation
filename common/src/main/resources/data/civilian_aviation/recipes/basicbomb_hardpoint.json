@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "IOI",
+    " I "
+  ],
+  "key": {
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "O": [
+      {
+        "item": "minecraft:tnt"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:basicbomb_hardpoint"
+  }
+}

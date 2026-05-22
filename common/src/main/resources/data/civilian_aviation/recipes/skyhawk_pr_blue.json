@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "BHB"
+  ],
+  "key": {
+    "S": [
+      {
+        "item": "civilian_aviation:skyhawk_blue"
+      }
+    ],
+    "B": [
+      {
+        "item": "minecraft:bucket"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:skyhawk_pr_blue"
+  }
+}

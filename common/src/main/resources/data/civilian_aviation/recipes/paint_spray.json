@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IRB",
+    " LS"
+  ],
+  "key": {
+    "I": [
+      {
+        "item": "minecraft:iron_nugget"
+      }
+    ],
+    "R": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "B": [
+      {
+        "item": "minecraft:bucket"
+      }
+    ],
+    "L": [
+      {
+        "item": "minecraft:lever"
+      }
+    ],
+    "S": [
+      {
+        "item": "minecraft:stick"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:paint_spray"
+  }
+}

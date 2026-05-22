@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EHI",
+    "EBW",
+    "EHI"
+  ],
+  "key": {
+    "E": [
+      {
+        "item": "immersive_aircraft:enhanced_propeller"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_block"
+      }
+    ],
+    "B": [
+      {
+        "item": "immersive_aircraft:bamboo_hopper"
+      }
+    ],
+    "W": [
+      {
+        "item": "minecraft:white_wool"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:trimotor_white"
+  }
+}

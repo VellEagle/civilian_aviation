@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BIB",
+    "IPI",
+    " I "
+  ],
+  "key": {
+    "B": [
+      {
+        "item": "minecraft:brown_wool"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "P": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:skyhawk_coffee"
+  }
+}

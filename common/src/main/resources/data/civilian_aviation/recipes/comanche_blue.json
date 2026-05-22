@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PEI",
+    "BHB",
+    "PEI"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "immersive_aircraft:propeller"
+      }
+    ],
+    "E": [
+      {
+        "item": "immersive_aircraft:engine"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "B": [
+      {
+        "item": "minecraft:blue_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:comanche_blue"
+  }
+}

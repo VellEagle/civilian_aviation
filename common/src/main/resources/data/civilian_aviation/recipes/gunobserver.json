@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ING"
+  ],
+  "key": {
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "N": [
+      {
+        "item": "immersive_aircraft:industrial_gears"
+      }
+    ],
+    "G": [
+      {
+        "item": "civilian_aviation:gunm1919"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:gunobserver"
+  }
+}

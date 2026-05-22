@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BHY",
+    "COC",
+    "IHI"
+  ],
+  "key": {
+    "B": [
+      {
+        "item": "minecraft:black_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "Y": [
+      {
+        "item": "minecraft:yellow_wool"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "O": [
+      {
+        "tag": "civilian_aviation:comanche"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  },
+  "result": {
+    "item": "civilian_aviation:vulcanair_blackyellow"
+  }
+}
