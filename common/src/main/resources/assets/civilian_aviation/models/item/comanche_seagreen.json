@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "civilian_aviation:item/comanche_seagreen"
+  }
+}

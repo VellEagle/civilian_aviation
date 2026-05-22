@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LID"
+  ],
+  "key": {
+    "L": [
+      {
+        "item": "minecraft:lever"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "D": [
+      {
+        "item": "minecraft:dispenser"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:gunm1919"
+  }
+}

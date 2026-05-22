@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BEW",
+    "CLC",
+    "IHI"
+  ],
+  "key": {
+    "B": [
+      {
+        "item": "minecraft:black_wool"
+      }
+    ],
+    "E": [
+      {
+        "item": "immersive_aircraft:enhanced_propeller"
+      }
+    ],
+    "W": [
+      {
+        "item": "minecraft:white_wool"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "L": [
+      {
+        "tag": "civilian_aviation:bell47g"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:bell206_blackstripe"
+  }
+}

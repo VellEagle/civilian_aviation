@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BHN",
+    "GIR",
+    "BHN"
+  ],
+  "key": {
+    "B": [
+      {
+        "item": "minecraft:blue_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "N": [
+      {
+        "item": "immersive_aircraft:nether_engine"
+      }
+    ],
+    "G": [
+      {
+        "item": "immersive_aircraft:gyroscope"
+      }
+    ],
+    "I": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ],
+    "R": [
+      {
+        "item": "minecraft:iron_block"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:e500_blue"
+  }
+}

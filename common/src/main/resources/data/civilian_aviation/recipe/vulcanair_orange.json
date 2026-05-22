@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OHO",
+    "CMC",
+    "IHI"
+  ],
+  "key": {
+    "O": [
+      {
+        "item": "minecraft:orange_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:chest"
+      }
+    ],
+    "M": [
+      {
+        "tag": "civilian_aviation:comanche"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:vulcanair_orange"
+  }
+}

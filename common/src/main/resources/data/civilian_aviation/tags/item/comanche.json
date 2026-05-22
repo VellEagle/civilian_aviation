@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "civilian_aviation:comanche_blackredstripe",
+    "civilian_aviation:comanche_blank",
+    "civilian_aviation:comanche_orangebrown",
+    "civilian_aviation:comanche_blue",
+    "civilian_aviation:comanche_red",
+    "civilian_aviation:comanche_seagreen",
+    "civilian_aviation:comanche_yellow"
+  ]
+}

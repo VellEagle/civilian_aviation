@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "civilian_aviation"
+version = "1.0"
+displayName = "Civilian Aviation"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/civilian-aviation"
+authors = "Assets Author:Mr.Mulle  Content Pack Author:VellEagle"
+description = "This mod adds a bunch of modern, (mostly) civilian aircraft to travel, transport, explore and decorate your airport! In Civilian Aviation, minecraft style and real planes are merged in a carefully crafted, vanilla-faithful way with all the functionalities you would expect!"
+logoFile = "icon.png"
+itemIcon = ""
+
+[[dependencies.civilian_aviation]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.civilian_aviation]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.civilian_aviation]]
+modId = "immersive_aircraft"
+mandatory = true
+versionRange = "[1.2.2,)"
+ordering = "NONE"
+side = "BOTH"

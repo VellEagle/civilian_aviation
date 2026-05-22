@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PHN",
+    "GBI",
+    "PHN"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "minecraft:pink_wool"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ],
+    "N": [
+      {
+        "item": "immersive_aircraft:nether_engine"
+      }
+    ],
+    "G": [
+      {
+        "item": "immersive_aircraft:gyroscope"
+      }
+    ],
+    "B": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_block"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:e500_extravagant"
+  }
+}

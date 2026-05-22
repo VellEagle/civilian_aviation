@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PRI",
+    "ESP",
+    "HII"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "immersive_aircraft:propeller"
+      }
+    ],
+    "R": [
+      {
+        "item": "minecraft:red_wool"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "E": [
+      {
+        "item": "immersive_aircraft:engine"
+      }
+    ],
+    "S": [
+      {
+        "item": "immersive_aircraft:sturdy_pipes"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:bell47g"
+  }
+}

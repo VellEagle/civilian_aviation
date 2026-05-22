@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PEI",
+    "BZH",
+    "PEI"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "immersive_aircraft:propeller"
+      }
+    ],
+    "E": [
+      {
+        "item": "immersive_aircraft:engine"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "B": [
+      {
+        "item": "minecraft:brown_wool"
+      }
+    ],
+    "Z": [
+      {
+        "tag": "civilian_aviation:pzlp11"
+      }
+    ],
+    "H": [
+      {
+        "item": "immersive_aircraft:hull"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:pzl37los_brown"
+  }
+}

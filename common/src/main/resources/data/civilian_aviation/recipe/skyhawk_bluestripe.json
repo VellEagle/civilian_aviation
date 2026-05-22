@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WIB",
+    "IPI",
+    " I "
+  ],
+  "key": {
+    "W": [
+      {
+        "item": "minecraft:white_wool"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "B": [
+      {
+        "item": "minecraft:blue_wool"
+      }
+    ],
+    "P": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:skyhawk_bluestripe"
+  }
+}

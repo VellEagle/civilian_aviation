@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GIG",
+    "IBI",
+    " I "
+  ],
+  "key": {
+    "G": [
+      {
+        "item": "minecraft:green_wool"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "B": [
+      {
+        "item": "immersive_aircraft:biplane"
+      }
+    ]
+  },
+  "result": {
+    "id": "civilian_aviation:skyhawk_green"
+  }
+}
