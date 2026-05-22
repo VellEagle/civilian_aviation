@@ -23,6 +23,9 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     modImplementation("net.conczin:immersive_aircraft:${rootProject.immersive_aircraft_version}+fabric")
+
+    implementation 'org.mariuszgromada.math:MathParser.org-mXparser:5.2.1'
+    include 'org.mariuszgromada.math:MathParser.org-mXparser:5.2.1'
 }
 
 processResources {

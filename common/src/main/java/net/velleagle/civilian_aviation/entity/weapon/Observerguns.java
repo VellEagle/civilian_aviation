@@ -54,8 +54,8 @@ public class Observerguns extends BulletWeapon {
     }
 
     @Override
-    protected Entity getBullet(Vector4f position, Vector3f direction) {
-        BulletEntity bullet = BULLET.get().create(getEntity().level());
+    protected Entity getBullet(Entity shooter, Vector4f position, Vector3f direction) {
+        BulletEntity bullet = BULLET.get().create(shooter.level());
         if (bullet == null) return null;
 
         // 銃身の先端から発射させるオフセット（必要に応じて数値を調整）
@@ -65,7 +65,7 @@ public class Observerguns extends BulletWeapon {
         double spawnZ = position.z() + direction.z() * barrelLength;
 
         bullet.setPos(spawnX, spawnY, spawnZ);
-        bullet.setOwner(getEntity());
+        bullet.setOwner(shooter);
 
         // 銃口が向いている方向（direction）にまっすぐ飛ばす
         bullet.setDeltaMovement(new Vec3(
@@ -174,5 +174,7 @@ public class Observerguns extends BulletWeapon {
 
         BBAnimationVariables.set("yaw", lerpedYaw);
         BBAnimationVariables.set("pitch", 0.0f); // 上下は動かないので強制0
+
+        BBAnimationVariables.set("muzzle_flash", flashIntensity);
     }
 }

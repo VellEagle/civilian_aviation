@@ -1,31 +1,28 @@
 package net.velleagle.civilian_aviation.network.c2s;
 
 import immersive_aircraft.cobalt.network.Message;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
-import net.velleagle.civilian_aviation.CivilianAviation;
+import net.minecraft.world.entity.player.Player;
 import net.velleagle.civilian_aviation.entity.CivilianAircraftEntity;
 import net.velleagle.civilian_aviation.entity.HelicopterEntity;
 
 /**
  * クライアント → サーバー: 指定エンティティの指定ドアの開閉トグルを要求する。
+ *
+ * Side:
+ *   LEFT       … door_l  （CivilianAircraftEntity / HelicopterEntity 共通）
+ *   RIGHT      … door_r  （同上）
+ *   SIDE_LEFT  … sidedoor_l  （HelicopterEntity 専用）
+ *   SIDE_RIGHT … sidedoor_r  （HelicopterEntity 専用）
  */
 public class DoorMessage extends Message {
 
-    public static final CustomPacketPayload.Type<DoorMessage> TYPE = Message.createType("door");
-    public static final StreamCodec<RegistryFriendlyByteBuf, DoorMessage> STREAM_CODEC =
-            StreamCodec.ofMember(DoorMessage::encode, DoorMessage::new);
-
-    @Override
-    public CustomPacketPayload.Type<DoorMessage> type() {
-        return TYPE;
-    }
-
     public enum Side {
-        LEFT, RIGHT, SIDE_LEFT, SIDE_RIGHT
+        LEFT,
+        RIGHT,
+        SIDE_LEFT,
+        SIDE_RIGHT
     }
 
     private final int entityId;
@@ -36,30 +33,34 @@ public class DoorMessage extends Message {
         this.side = side;
     }
 
-    public DoorMessage(RegistryFriendlyByteBuf b) {
+    public DoorMessage(FriendlyByteBuf b) {
         this.entityId = b.readInt();
         this.side = Side.values()[b.readInt()];
     }
 
     @Override
-    public void encode(RegistryFriendlyByteBuf b) {
+    public void encode(FriendlyByteBuf b) {
         b.writeInt(entityId);
         b.writeInt(side.ordinal());
     }
 
     @Override
-    public void receiveServer(ServerPlayer player) {
+    public void receive(Player player) {
         Entity entity = player.level().getEntity(entityId);
 
+        // CivilianAircraftEntity（固定翼機など）: LEFT / RIGHT のみ対応
         if (entity instanceof CivilianAircraftEntity aircraft && aircraft.hasDoors()) {
             if (player.distanceToSqr(aircraft) < 64.0) {
                 if (side == Side.LEFT || side == Side.RIGHT) {
-                    aircraft.toggleDoor(side == Side.LEFT ? Side.LEFT : Side.RIGHT);
+                    aircraft.toggleDoor(side == Side.LEFT
+                            ? net.velleagle.civilian_aviation.network.c2s.DoorMessage.Side.LEFT
+                            : net.velleagle.civilian_aviation.network.c2s.DoorMessage.Side.RIGHT);
                 }
             }
             return;
         }
 
+        // HelicopterEntity: 全4種に対応
         if (entity instanceof HelicopterEntity heli && heli.hasDoors()) {
             if (player.distanceToSqr(heli) < 64.0) {
                 switch (side) {

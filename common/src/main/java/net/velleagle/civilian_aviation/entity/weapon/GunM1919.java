@@ -43,8 +43,8 @@ public class GunM1919 extends BulletWeapon {
 
     // 🔹 3引数版のみ実装
     @Override
-    protected Entity getBullet(Vector4f position, Vector3f direction) {
-        BulletEntity bullet = BULLET.get().create(getEntity().level());
+    protected Entity getBullet(Entity shooter, Vector4f position, Vector3f direction) {
+        BulletEntity bullet = BULLET.get().create(shooter.level());
         if (bullet == null) return null;
 
         // 銃口のワールド座標
@@ -61,7 +61,7 @@ public class GunM1919 extends BulletWeapon {
         bullet.setPos(position.x(), position.y(), position.z());
 
         // 弾の所有者
-        bullet.setOwner(getEntity());
+        bullet.setOwner(shooter);
 
         // 弾の移動方向と速度を直接セット
         bullet.setDeltaMovement(

@@ -32,7 +32,7 @@ public class BasicBombRenderer extends EntityRenderer<BasicBombEntity> {
         matrixStack.mulPose(com.mojang.math.Axis.XP.rotationDegrees(pitch));  // Pitch
 
         // モデルを取得して描画
-        BBModel model = BBModelLoader.MODELS.get(ResourceLocation.fromNamespaceAndPath("immersive_aircraft", "basicbomb"));
+        BBModel model = BBModelLoader.MODELS.get(new ResourceLocation("immersive_aircraft", "basicbomb"));
         if (model != null) {
             BBModelRenderer.renderModel(model, matrixStack, buffer, packedLight, partialTicks,
                     null, null, 1.0f, 1.0f, 1.0f, 1.0f);
@@ -44,6 +44,6 @@ public class BasicBombRenderer extends EntityRenderer<BasicBombEntity> {
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(@NotNull BasicBombEntity entity) {
-        return ResourceLocation.fromNamespaceAndPath("immersive_aircraft", "textures/entity/tiny_tnt.png");
+        return new ResourceLocation("immersive_aircraft", "textures/entity/tiny_tnt.png");
     }
 }

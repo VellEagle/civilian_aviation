@@ -3,6 +3,7 @@ package net.velleagle.civilian_aviation.entity;
 import immersive_aircraft.cobalt.network.NetworkHandler;
 import immersive_aircraft.entity.AircraftEntity;
 import immersive_aircraft.entity.Rotorcraft;
+import immersive_aircraft.entity.misc.TrailDescriptor;
 import immersive_aircraft.item.upgrade.VehicleStat;
 import immersive_aircraft.resources.bbmodel.BBAnimationVariables;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -179,8 +180,8 @@ public abstract class HelicopterEntity extends Rotorcraft {
     // SynchedEntityData
     // -------------------------------------------------------
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder entityData) {
-        super.defineSynchedData(entityData);
+    protected void defineSynchedData() {
+        super.defineSynchedData();
         entityData.define(DOOR_L_OPEN,     false);
         entityData.define(DOOR_R_OPEN,     false);
         entityData.define(SIDEDOOR_L_OPEN, false);
@@ -407,10 +408,10 @@ public abstract class HelicopterEntity extends Rotorcraft {
     // 重力・コントローラー・convertPower（変更なし）
     // -------------------------------------------------------
     @Override
-    public double getDefaultGravity() {
+    protected float getGravity() {
         return wasTouchingWater
-                ? 0.04
-                : (1.0 - getEnginePower()) * super.getDefaultGravity();
+                ? 0.04f
+                : (1.0f - getEnginePower()) * super.getGravity();
     }
 
     @Override
@@ -489,6 +490,11 @@ public abstract class HelicopterEntity extends Rotorcraft {
     // -------------------------------------------------------
     // トレイル幅
     // -------------------------------------------------------
+    @Override
+    public float getBaseTrailWidth(Matrix4f transform, int index, TrailDescriptor trail) {
+        return Math.max(0.0f, Math.min(1.0f,
+                (float) (getDeltaMovement().length() - 0.05f)));
+    }
 
     // -------------------------------------------------------
     // NBT

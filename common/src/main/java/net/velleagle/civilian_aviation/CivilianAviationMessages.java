@@ -9,18 +9,18 @@ public class CivilianAviationMessages {
     public static void loadMessages() {
         NetworkHandler.registerMessage(
                 CivilianAviation.MOD_ID,
-                DoorMessage.TYPE,
-                DoorMessage.STREAM_CODEC
+                DoorMessage.class,
+                DoorMessage::new
         );
         NetworkHandler.registerMessage(
                 CivilianAviation.MOD_ID,
-                PaintMessage.TYPE,
-                PaintMessage.STREAM_CODEC
+                PaintMessage.class,
+                PaintMessage::new
         );
         NetworkHandler.registerMessage(
                 CivilianAviation.MOD_ID,
-                LandingGearMessage.TYPE,
-                LandingGearMessage.STREAM_CODEC
+                LandingGearMessage.class,
+                LandingGearMessage::new
         );
     }
 }

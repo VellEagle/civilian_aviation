@@ -1,10 +1,9 @@
-# Civilian Aviation - 1.21.1
+# Man of Many Planes
 
-An addon for [Immersive Aircraft](https://www.curseforge.com/minecraft/mc-mods/immersive-aircraft) that adds civilian aircraft.
+* Model and Textures by Man of Many Snails
+* Code by Luke100000
 
-## Requires
-- Immersive Aircraft 1.2.2+ for Minecraft 1.21.1
+# Licence
 
-## Platforms
-- NeoForge (NeoForge 21.1.x)
-- Fabric (Fabric Loader 0.16+)
+This repo is licenced under the [CC0 Licence](https://creativecommons.org/public-domain/cc0/), excluding textures and bbmodel files.
+You may use this repo as a base or reference for own addons.

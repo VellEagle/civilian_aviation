@@ -30,6 +30,7 @@ public class CivilianAviationKeyBindings {
     /** ランディングギア トグルキー（デフォルト: G） */
     public static final KeyMapping landingGear;
 
+
     static {
         landingGear    = newKey("landing_gear",    GLFW.GLFW_KEY_G);
     }

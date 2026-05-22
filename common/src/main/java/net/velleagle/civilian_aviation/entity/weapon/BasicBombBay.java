@@ -38,8 +38,8 @@ public class BasicBombBay extends BulletWeapon {
     }
 
     @Override
-    protected Entity getBullet(Vector4f position, Vector3f direction) {
-        BasicBombEntity bomb = new BasicBombEntity(BASIC_BOMB.get(), getEntity().level());
+    protected Entity getBullet(Entity shooter, Vector4f position, Vector3f direction) {
+        BasicBombEntity bomb = new BasicBombEntity(BASIC_BOMB.get(), shooter.level());
         bomb.setPos(position.x(), position.y(), position.z());
 
         // 速度を機体向きに合わせて設定
@@ -47,8 +47,8 @@ public class BasicBombBay extends BulletWeapon {
         bomb.setDeltaMovement(direction.x, direction.y, direction.z);
 
         // 機体の回転を爆弾に適用
-        bomb.setYRot(getEntity().getYRot());
-        bomb.setXRot(getEntity().getXRot());
+        bomb.setYRot(shooter.getYRot());
+        bomb.setXRot(shooter.getXRot());
 
         return bomb;
     }

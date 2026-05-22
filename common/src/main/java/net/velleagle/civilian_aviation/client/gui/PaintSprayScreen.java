@@ -161,15 +161,10 @@ public class PaintSprayScreen extends Screen {
     // -------------------------------------------------------
     // render
     // -------------------------------------------------------
-    // 1.21.1 の Screen.renderBackground() はブラーシェーダーを適用するため呼ばない。
-    // ワールドを透過させたままパネルだけ描画する（インゲームGUI）。
-    @Override
-    public void renderBackground(GuiGraphics g, int mouseX, int mouseY, float delta) {
-        // 何もしない（ブラー抑制）
-    }
-
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
+        renderBackground(g);
+
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 

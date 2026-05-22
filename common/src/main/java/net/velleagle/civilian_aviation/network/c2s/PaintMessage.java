@@ -3,13 +3,11 @@ package net.velleagle.civilian_aviation.network.c2s;
 import immersive_aircraft.cobalt.network.Message;
 import immersive_aircraft.entity.AircraftEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.velleagle.civilian_aviation.entity.CivilianAircraftEntity;
 import net.velleagle.civilian_aviation.entity.HelicopterEntity;
@@ -20,17 +18,12 @@ import java.util.List;
 
 /**
  * クライアント → サーバー: 機体の色バリアント変更を要求する。
+ *
+ * 色変更はエンティティの差し替えで実現する。
+ * 各カラーバリアントは独立したエンティティタイプ/BBmodelとして定義されているため、
+ * setDyeColor() による着色ではなくエンティティ自体を入れ替えてモデルを切り替える。
  */
 public class PaintMessage extends Message {
-
-    public static final CustomPacketPayload.Type<PaintMessage> TYPE = Message.createType("paint");
-    public static final StreamCodec<RegistryFriendlyByteBuf, PaintMessage> STREAM_CODEC =
-            StreamCodec.ofMember(PaintMessage::encode, PaintMessage::new);
-
-    @Override
-    public CustomPacketPayload.Type<PaintMessage> type() {
-        return TYPE;
-    }
 
     private final int    entityId;
     private final String targetVariantId;
@@ -40,48 +33,56 @@ public class PaintMessage extends Message {
         this.targetVariantId = targetVariantId;
     }
 
-    public PaintMessage(RegistryFriendlyByteBuf b) {
+    public PaintMessage(FriendlyByteBuf b) {
         this.entityId        = b.readInt();
         this.targetVariantId = b.readUtf();
     }
 
     @Override
-    public void encode(RegistryFriendlyByteBuf b) {
+    public void encode(FriendlyByteBuf b) {
         b.writeInt(entityId);
         b.writeUtf(targetVariantId);
     }
 
     @Override
-    public void receiveServer(ServerPlayer player) {
+    public void receive(Player player) {
         Level level  = player.level();
         Entity entity = level.getEntity(entityId);
 
+        // CivilianAircraftEntity と HelicopterEntity の両方に対応
         AircraftEntity aircraft;
         String currentVariantId;
         if (entity instanceof CivilianAircraftEntity ca) {
-            aircraft         = ca;
+            aircraft        = ca;
             currentVariantId = ca.getVariantEntityId();
         } else if (entity instanceof HelicopterEntity he) {
-            aircraft         = he;
+            aircraft        = he;
             currentVariantId = he.getVariantEntityId();
         } else {
             return;
         }
 
+        // 近距離チェック（不正防止: 8ブロック以内）
         if (player.distanceToSqr(aircraft) > 64.0) return;
+
+        // 同じバリアントなら何もしない
         if (currentVariantId.equals(targetVariantId)) return;
 
+        // グループ内に target が存在するか確認
         List<AircraftVariant> group = AircraftVariant.findGroup(currentVariantId);
         boolean targetInGroup = group.stream().anyMatch(v -> v.entityId().equals(targetVariantId));
         if (!targetInGroup) return;
 
-        ResourceLocation targetTypeId = ResourceLocation.fromNamespaceAndPath("civilian_aviation", targetVariantId);
+        // 変更先エンティティタイプを取得
+        ResourceLocation targetTypeId = new ResourceLocation("civilian_aviation", targetVariantId);
         EntityType<?>    targetType   = BuiltInRegistries.ENTITY_TYPE.get(targetTypeId);
         if (targetType == null) return;
 
+        // 新エンティティを生成
         Entity newEntity = targetType.create(level);
         if (newEntity == null) return;
 
+        // 位置・向き・速度・体力・色を引き継ぐ
         newEntity.copyPosition(aircraft);
         newEntity.setDeltaMovement(aircraft.getDeltaMovement());
         newEntity.setYRot(aircraft.getYRot());
@@ -93,11 +94,13 @@ public class PaintMessage extends Message {
             newAircraft.setDyeColor(aircraft.getDyeColor());
         }
 
+        // 搭乗者を引き継ぐ
         for (Entity passenger : new ArrayList<>(aircraft.getPassengers())) {
             passenger.stopRiding();
             passenger.startRiding(newEntity, true);
         }
 
+        // 旧エンティティを除去して新エンティティをスポーン
         aircraft.discard();
         level.addFreshEntity(newEntity);
     }

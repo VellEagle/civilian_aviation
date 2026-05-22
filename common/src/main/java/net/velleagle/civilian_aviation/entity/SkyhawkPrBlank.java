@@ -84,11 +84,11 @@ public class SkyhawkPrBlank extends CivilianAircraftEntity {
     }
 
     @Override
-    public double getDefaultGravity() {
+    protected float getGravity() {
         float water = (float) getFluidHeight(FluidTags.WATER);
         return water > 0
-                ? -0.04 * water
-                : (1.0 - getEnginePower()) * super.getDefaultGravity();
+                ? 0.04f * water
+                : (1.0f - getEnginePower()) * super.getGravity();
     }
 
     @Override
@@ -114,8 +114,18 @@ public class SkyhawkPrBlank extends CivilianAircraftEntity {
     }
 
     @Override public boolean worksUnderWater() { return true; }
-    protected float getDismountRotation() { return 0.0f; }
+    @Override protected float getDismountRotation() { return 0.0f; }
     @Override public double getZoom() { return 6.0; }
+
+    @Override
+    protected SoundEvent getEngineStartSound() {
+        return Sounds.ENGINE_START_BAMBOO_HOPPER.get();
+    }
+
+    @Override
+    protected SoundEvent getEngineSound() {
+        return Sounds.PROPELLER_BAMBOO_HOPPER.get();
+    }
 
     @Override
     public Item asItem() {

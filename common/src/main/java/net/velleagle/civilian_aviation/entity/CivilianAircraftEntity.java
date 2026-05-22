@@ -240,8 +240,8 @@ public abstract class CivilianAircraftEntity extends AirplaneEntity {
     // ---- SynchedEntityData --------------------------------
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder entityData) {
-        super.defineSynchedData(entityData);
+    protected void defineSynchedData() {
+        super.defineSynchedData();
         entityData.define(DOOR_L_OPEN, false);
         entityData.define(DOOR_R_OPEN, false);
     }

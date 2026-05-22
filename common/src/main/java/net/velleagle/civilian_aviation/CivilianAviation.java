@@ -1133,6 +1133,8 @@ public class CivilianAviation {
         BBAnimationVariables.register("landing_gear");
         BBAnimationVariables.register("landing_gear_a");
         BBAnimationVariables.register("gear_hatch");
+        BBAnimationVariables.register("muzzle_flash");
+
         //WeaponRegistry
         WeaponRegistry.register(locate("gunobserver"), Observerguns::new);
         WeaponRegistry.register(locate("gunm1919"), GunM1919::new);
@@ -1159,6 +1161,6 @@ public class CivilianAviation {
     }
 
     public static ResourceLocation locate(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+        return new ResourceLocation(MOD_ID, name);
     }
 }

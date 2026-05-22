@@ -4,10 +4,12 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 
     modImplementation("net.conczin:immersive_aircraft:${rootProject.immersive_aircraft_version}+common")
+
+    implementation 'org.mariuszgromada.math:MathParser.org-mXparser:5.2.1'
 }
 
 architectury {
-    common("fabric", "neoforge")
+    common("fabric", "forge")
 }
 
 publishing {

@@ -69,7 +69,7 @@ public class ObservergunsWeaponRenderer extends WeaponRenderer<Observerguns> {
             float time) {
 
         matrixStack.pushPose();
-        matrixStack.last().pose().mul(weapon.getMount().transform());
+        matrixStack.mulPoseMatrix(weapon.getMount().transform());
 
         BBModel model = BBModelLoader.MODELS.get(modelId);
         if (model == null) {
@@ -79,5 +79,88 @@ public class ObservergunsWeaponRenderer extends WeaponRenderer<Observerguns> {
 
         // アニメーション変数をセット（pitch/yaw/muzzle_flash など）
         weapon.setAnimationVariables(entity, time);
+
+        // フラッシュ強度を取得（setAnimationVariables でセット済み）
+        float flashIntensity = (float) BBAnimationVariables.REGISTRY
+                .getOrDefault("muzzle_flash", new org.mariuszgromada.math.mxparser.Argument("variable_muzzle_flash", 0))
+                .getArgumentValue();
+
+        // ModelPartRenderHandler でフラッシュボーンだけカスタム描画
+        ModelPartRenderHandler<T> handler = buildHandler(entity, vertexConsumerProvider, light, time, flashIntensity);
+
+        BBModelRenderer.renderModel(model, matrixStack, vertexConsumerProvider, light, time, entity, handler, 1.0f, 1.0f, 1.0f, 1.0f);
+
+        matrixStack.popPose();
+    }
+
+    // ──────────────────────────────────────────────
+    // フラッシュボーン用ハンドラ構築
+    // ──────────────────────────────────────────────
+
+    private <T extends VehicleEntity> ModelPartRenderHandler<T> buildHandler(
+            T entity,
+            MultiBufferSource vertexConsumerProvider,
+            int light,
+            float time,
+            float flashIntensity) {
+
+        return new ModelPartRenderHandler<T>()
+                // 外フラッシュ（大きめ・オレンジ）
+                .add("mflash",
+                        (model, object, vcp, ent, ms, lt, t, mph) ->
+                                renderFlashBone(model, object, vcp, ms,
+                                        1.0f, 0.55f, 0.05f, // orange
+                                        flashIntensity))
+                // 内フラッシュ（小さめ・白黄色）
+                .add("mflash_inner",
+                        (model, object, vcp, ent, ms, lt, t, mph) ->
+                                renderFlashBone(model, object, vcp, ms,
+                                        1.0f, 0.95f, 0.5f, // bright yellow-white
+                                        Math.min(1.0f, flashIntensity * 1.3f))); // 内側は少し明るく
+    }
+
+    // ──────────────────────────────────────────────
+    // フラッシュ単一ボーンの描画
+    // ──────────────────────────────────────────────
+
+    /**
+     * テクスチャなし発光ポリゴンとしてボーン内の全フェイスを描画する。
+     *
+     * RenderType として beaconBeam (additive, transparent=true) を使用するため
+     * テクスチャは必要だが内容は無視される。ここでは 1×1 の白テクスチャを借用。
+     *
+     * alpha が 0 以下のときはスキップして描画コストをゼロにする。
+     */
+    private static final ResourceLocation WHITE_TEXTURE =
+            new ResourceLocation("immersive_aircraft", "textures/entity/trail.png");
+
+    private void renderFlashBone(
+            BBModel model,
+            BBObject object,
+            MultiBufferSource vcp,
+            PoseStack ms,
+            float r, float g, float b,
+            float alpha) {
+
+        if (alpha <= 0.0f) {
+            // フラッシュが消えているときは何も描かない（ボーンを非表示に）
+            return;
+        }
+
+        // beaconBeam は加算合成 (additive) かつ常に発光 (light=MAX)
+        RenderType renderType = RenderType.beaconBeam(WHITE_TEXTURE, true);
+        VertexConsumer consumer = vcp.getBuffer(renderType);
+
+        // フルブライト（15728640 = LightTexture.FULL_BRIGHT）
+        int fullBright = 0xF000F0;
+
+        // BBFaceContainer であれば faces を直接描画する
+        BBModelRenderer.renderFaces(
+                (BBFaceContainer) object,
+                ms, vcp, fullBright,
+                r, g, b, alpha,
+                // カスタム VertexConsumer プロバイダ: テクスチャに関わらず beaconBeam バッファを返す
+                (source, container, face) -> consumer
+        );
     }
 }

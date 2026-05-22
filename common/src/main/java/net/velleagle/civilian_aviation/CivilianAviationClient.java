@@ -1,11 +1,13 @@
 package net.velleagle.civilian_aviation;
 
+import immersive_aircraft.ItemColors;
 import immersive_aircraft.WeaponRendererRegistry;
 import immersive_aircraft.client.render.entity.weaponRenderer.SimpleWeaponRenderer;
 import immersive_aircraft.cobalt.registration.Registration;
 import net.minecraft.client.gui.GuiGraphics;
 import net.velleagle.civilian_aviation.client.*;
 
+import static immersive_aircraft.ItemColors.getDyeColor;
 
 public class CivilianAviationClient {
     public static void init() {
@@ -109,6 +111,98 @@ public class CivilianAviationClient {
         WeaponRendererRegistry.register(CivilianAviation.locate("basicbomb_hardpoint"), new SimpleWeaponRenderer("basicbomb_hardpoint"));
 
 
+    }
+
+    static {
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_BLACKRED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_EXTRAVAGANT_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_RUSTY_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_SILVER_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.E500_YELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_BLACKSTRIPE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_BLACK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_BLANK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_BROWN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_GRAY_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_OLIVE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_ORANGE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_POLICE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_SEAGREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_SKYBLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL206_YELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL47G_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL47G_BLACK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL47G_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.BELL47G_OLIVE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZLP11_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZLP11_BROWN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZLP11_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZLP11_TAN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZL37LOS_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZL37LOS_ARCTIC_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZL37LOS_BROWN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZL37LOS_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.PZL37LOS_TAN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.TRIMOTOR_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_BLACKRED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_BLACKYELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_BLANK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_BLUESTRIPE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_COW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_GRAY_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_ORANGE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_POLICE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_REDSNAIL_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_REDYELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_SEAGREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_WHITE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_WINGED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.VULCANAIR_YELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.TRIMOTOR_BLACK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.TRIMOTOR_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.TRIMOTOR_WHITE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_BLACKREDSTRIPE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_YELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_ORANGEBROWN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_SEAGREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.COMANCHE_BLANK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_COFFEE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLUESTRIPE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLACKORANGE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLACKRED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLACKYELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLANK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BLUERED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BROWN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_BUTTER_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_PR_RED2_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_RED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_COFFEE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLUESTRIPE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_GREEN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLACKORANGE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLACKRED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLACKYELLOW_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLANK_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLUE_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BLUERED_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BROWN_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_BUTTER_ITEM.get(), getDyeColor(0xFFFFFF));
+        ItemColors.ITEM_COLORS.put(CivilianAviation.SKYHAWK_RED2_ITEM.get(), getDyeColor(0xFFFFFF));
     }
 }
 

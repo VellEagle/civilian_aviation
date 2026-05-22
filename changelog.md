@@ -1,18 +1,28 @@
-# Civilian Aviation Changelog
+# 0.2.0
 
-## 1.21.1-1.0.0
-- Initial port to Minecraft 1.21.1
-- Support for NeoForge and Fabric
-- All aircraft from Civilian Aviation 1.20.1 ported:
-  - E500 (8 variants)
-  - Bell 206 (14 variants)
-  - Bell 47G (4 variants)
-  - PZL P.11 (4 variants)
-  - PZL 37 Los (5 variants)
-  - Trimotor (4 variants)
-  - Vulcanair (17 variants)
-  - Comanche (7 variants)
-  - Skyhawk (13 variants)
-  - Skyhawk PR (13 variants)
-  - Weapons: Basic Bomb Bay, Observer Guns, M1919 Gun
-  - Paint Spray item for repainting aircraft
+* Updated to IA 1.1.0
+* Planes can now be dyed (Thanks Cibernet!)
+
+# 0.1.0
+
+* Updated to IA 1.0.0
+
+# 0.0.4
+
+* Added translations
+* Fixed sitting position
+
+# 0.0.3
+
+* Aircraft now drop the right item
+* New items (thanks 김작업!)
+
+# 0.0.2
+
+* Fixed recipes
+* Added advancement to gain recipes
+
+# 0.0.1
+
+* Added Scarlet Biplane
+* Added Economy Plane

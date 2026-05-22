@@ -78,8 +78,8 @@ public class E500Red extends CivilianAircraftEntity {
     // ---- SynchedEntityData --------------------------------
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder entityData) {
-        super.defineSynchedData(entityData);
+    protected void defineSynchedData() {
+        super.defineSynchedData();
         entityData.define(GEAR_DEPLOYED, true);
     }
 
